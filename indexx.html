@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+</head>
+<body>
+    <h2>Enter Your Information</h2>
+    <form id="userForm">
+        <label>Name: <input type="text" id="name" required></label><br><br>
+        <label>Email: <input type="email" id="email" required></label><br><br>
+        <label>Phone: <input type="tel" id="phone" required></label><br><br>
+        <label>City: <input type="text" id="city" required></label><br><br>
+        <button type="button" onclick="showData()">Submit</button>
+    </form>
+
+    <h3>Entered Information:</h3>
+    <p id="output"></p>
+
+    <script>
+        function showData() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let city = document.getElementById("city").value;
+
+            if(name && email && phone && city) {
+                document.getElementById("output").innerHTML = 
+                    `<strong>Name:</strong> ${name} <br>
+                     <strong>Email:</strong> ${email} <br>
+                     <strong>Phone:</strong> ${phone} <br>
+                     <strong>City:</strong> ${city}`;
+            } else {
+                alert("Please fill all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
